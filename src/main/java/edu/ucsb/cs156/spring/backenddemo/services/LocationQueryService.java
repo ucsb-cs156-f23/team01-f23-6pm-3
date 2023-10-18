@@ -33,6 +33,7 @@ public class LocationQueryService {
     public String getJSON(String location) throws HttpClientErrorException {
         log.info("location={}", location);
         Map<String, String> uriVariables = Map.of("location", location);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
