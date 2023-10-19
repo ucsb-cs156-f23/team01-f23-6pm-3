@@ -24,6 +24,4 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/api/locations")
 public class LocationController {
 
-
-
 }
