@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.apple.laf.resources.aqua_de;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
