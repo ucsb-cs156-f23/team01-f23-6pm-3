@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name="public-holidays-controller")
 @Slf4j
 @RestController
-@RequestMapping("/api/publicholidays/get")
+@RequestMapping("/api/publicholidays")
 public class PublicHolidaysController {
     
     ObjectMapper mapper = new ObjectMapper();
@@ -31,11 +31,11 @@ public class PublicHolidaysController {
 
     @Operation(summary = "Get public holidays for a given year and country", description = "Public Holiday Info from https://date.nager.at/Api")
     @GetMapping("/get")
-    public ResponseEntity<String> getEarthquakes(
-        @Parameter(name="year", description="year to get holidays", example="2023") @RequestParam String year,
-        @Parameter(name="countryCode", description="code for country to get holidays", example="US") @RequestParam String countryCode
+    public ResponseEntity<String> getPublicHolidays(
+        @Parameter(name="countryCode", description="2 letter country code", example="US, MX, CN") @RequestParam String countryCode,
+        @Parameter(name="year", description="year", example="2012, 2023") @RequestParam String year
     ) throws JsonProcessingException {
-        log.info("getHolidays: year={} countryCode={}", year, countryCode);
+        log.info("getPublicHolidays: year={} countryCode={}", year, countryCode);
         String result = publicHolidayQueryService.getJSON(year, countryCode);
         return ResponseEntity.ok().body(result);
     }
