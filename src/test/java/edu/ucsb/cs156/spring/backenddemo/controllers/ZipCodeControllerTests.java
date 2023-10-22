@@ -35,6 +35,7 @@ public class ZipCodeControllerTests {
 
     String url = String.format("/api/zipcode/get?zipcode=%s",zipcode);
 
+    
     MvcResult response = mockMvc
         .perform( get(url).contentType("application/json"))
         .andExpect(status().isOk()).andReturn();
