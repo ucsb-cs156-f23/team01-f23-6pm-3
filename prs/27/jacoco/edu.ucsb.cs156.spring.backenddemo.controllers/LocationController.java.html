@@ -23,6 +23,20 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping(&quot;/api/locations&quot;)
 <span class="fc" id="L25">public class LocationController {</span>
+<span class="fc" id="L26">    ObjectMapper mapper = new ObjectMapper();</span>
+
+    @Autowired
+    LocationQueryService locationQueryService;
+
+    @Operation(summary=&quot;Get a location on the map&quot;, description =&quot;data comes from https://nominatim.openstreetmap.org/&quot;) 
+    @GetMapping(&quot;/get&quot;)
+    public ResponseEntity&lt;String&gt; getLocations(
+        @Parameter(name=&quot;location&quot;, example=&quot;Berlin&quot;, description = &quot;a location name&quot;) @RequestParam String location
+    ) throws JsonProcessingException {
+<span class="fc" id="L36">        log.info(&quot;getLocation: location={}&quot;, location);</span>
+<span class="fc" id="L37">        String result = locationQueryService.getJSON(location);</span>
+<span class="fc" id="L38">        return ResponseEntity.ok().body(result);</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
