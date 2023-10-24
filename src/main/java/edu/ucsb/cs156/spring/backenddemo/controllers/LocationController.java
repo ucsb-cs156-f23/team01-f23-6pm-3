@@ -31,7 +31,7 @@ public class LocationController {
     @Operation(summary="Get a location on the map", description ="data comes from https://nominatim.openstreetmap.org/") 
     @GetMapping("/get")
     public ResponseEntity<String> getLocations(
-        @Parameter(name="location", example="Berlin") @RequestParam String location
+        @Parameter(name="location", example="Berlin", description = "a location name") @RequestParam String location
     ) throws JsonProcessingException {
         log.info("getLocation: location={}", location);
         String result = locationQueryService.getJSON(location);
