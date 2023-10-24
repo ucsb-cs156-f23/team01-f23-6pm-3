@@ -4,10 +4,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.ucsb.cs156.spring.backenddemo.services.JokeQueryService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
@@ -26,7 +28,10 @@ public class JokeController {
 
     @Operation(summary = "Get a random joke")
     @GetMapping("/get")
-    public ResponseEntity<String> getJoke() throws JsonProcessingException {
+    public ResponseEntity<String> getJoke(
+        @Parameter(name="category", description="category of joke, e.g. 'Programming' or 'Spooky'", example="Programming") @RequestParam String category,
+        @Parameter(name="amount", description="amount of jokes to get, e.g. '1' or '2'", example="1") @RequestParam String numJokes) 
+        throws JsonProcessingException {
         String result = jokeQueryService.getJSON("Programming", 1);  // Placeholder for category and number of jokes. Actual implementation might differ.
         return ResponseEntity.ok().body(result);
     }
