@@ -7,6 +7,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import edu.ucsb.cs156.spring.backenddemo.services.ZipCodeQueryService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,9 +21,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(value = ZipCodeController.class)
 public class ZipCodeControllerTests {
+  private ObjectMapper mapper = new ObjectMapper();
   @Autowired
   private MockMvc mockMvc;
-
   @MockBean
   ZipCodeQueryService mockZipCodeQueryService;
 
