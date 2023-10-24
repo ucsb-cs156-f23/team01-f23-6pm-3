@@ -23,17 +23,18 @@ public class JokeControllerTests {
 
   @Autowired
   private MockMvc mockMvc;
-  
   @MockBean
   JokeQueryService mockJokeQueryService;
 
   @Test
   public void test_getJoke() throws Exception {
   
-    String fakeJsonResult="{ \"fake\" : \"joke\" }";
+    String fakeJsonResult="{ \"fake\" : \"result\" }";
+    String category = "Programming";
+    String numJokes = "1";
     when(mockJokeQueryService.getJSON("Programming", 1)).thenReturn(fakeJsonResult);
 
-    String url = String.format("/api/jokes/get");
+    String url = String.format("/api/jokes/get?category=%s&numJokes=%s", category, numJokes);
 
     MvcResult response = mockMvc
         .perform( get(url).contentType("application/json"))

@@ -30,9 +30,9 @@ public class JokeController {
     @GetMapping("/get")
     public ResponseEntity<String> getJoke(
         @Parameter(name="category", description="category of joke, e.g. 'Programming' or 'Spooky'", example="Programming") @RequestParam String category,
-        @Parameter(name="amount", description="amount of jokes to get, e.g. '1' or '2'", example="1") @RequestParam String numJokes) 
+        @Parameter(name="numJokes", description="amount of jokes to get, e.g. '1' or '2'", example="1") @RequestParam int numJokes) 
         throws JsonProcessingException {
-        String result = jokeQueryService.getJSON("Programming", 1);  // Placeholder for category and number of jokes. Actual implementation might differ.
+        String result = jokeQueryService.getJSON(category, numJokes);  
         return ResponseEntity.ok().body(result);
     }
 

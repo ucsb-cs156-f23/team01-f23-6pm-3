@@ -30,7 +30,7 @@ public class JokeQueryServiceTests {
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
         this.mockRestServiceServer.expect(requestTo(expectedURL))
-                .andExpect(header("Accept", MediaType.TEXT_PLAIN.toString()))
+                .andExpect(header("Accept", MediaType.APPLICATION_JSON.toString()))
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 

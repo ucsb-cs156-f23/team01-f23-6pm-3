@@ -30,7 +30,7 @@ public class JokeQueryService {
     public String getJSON(String category, int numJokes) throws HttpClientErrorException {
         log.info("amount={}", numJokes);
         HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(List.of(MediaType.TEXT_PLAIN));
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         Map<String, String> uriVariables = Map.of("category", category, "numJokes", Integer.toString(numJokes));
