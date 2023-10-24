@@ -23,5 +23,19 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/locations")
 public class LocationController {
+    ObjectMapper mapper = new ObjectMapper();
+
+    @Autowired
+    LocationQueryService locationQueryService;
+
+    @Operation(summary="Get a location on the map", description ="data comes from https://nominatim.openstreetmap.org/") 
+    @GetMapping("/get")
+    public ResponseEntity<String> getLocations(
+        @Parameter(name="location", example="Berlin", description = "a location name") @RequestParam String location
+    ) throws JsonProcessingException {
+        log.info("getLocation: location={}", location);
+        String result = locationQueryService.getJSON(location);
+        return ResponseEntity.ok().body(result);
+    }
 
 }
