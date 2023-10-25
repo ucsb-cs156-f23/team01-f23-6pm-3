@@ -1,38 +1,21 @@
-# STARTER-team01
+# f23-6pm-3-team01
 
 Lab instructions: <https://ucsb-cs156.github.io/f23/lab/team01.html>
 
-* TODO: Update the following table, then delete this line that says "TODO".
-
 ```
-|   Name    | GitHub Id |  Service                    | Controller                |
-|-----------|-----------|-----------------------------|---------------------------| 
-|           |           | `LocationQueryService`      | `LocationController`      |   
-|           |           | `PublicHolidayQueryService` | `PublicHolidayController` |   
-|           |           | `TidesQueryService`         | `TidesController`         |   
-|           |           | `UniversityQueryService`    | `UniversityController`    |
-|           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
+|   Name         | GitHub Id          |  Service                    | Controller                |
+|----------------|--------------------|-----------------------------|---------------------------| 
+|Yicong Yan      |YicongYan           | `LocationQueryService`      | `LocationController`      |   
+|Salvador Gracia |SalvadorGracia      | `PublicHolidayQueryService` | `PublicHolidayController` |   
+|Erica Liu       |erica-ll            | `TidesQueryService`         | `TidesController`         |   
+|Garrett Hu      |Garrett-Hu          | `UniversityQueryService`    | `UniversityController`    |
+|Bella Ward      |bella-ward          | `ZipCodeQueryService`       | `ZipCodeController`       |
+|Leo Guo         |HououinKyouma-2036  | `JokesQueryService`         | `JokesController`         |
 ```
 
+Repo: https://github.com/ucsb-cs156-f23/team01-f23-6pm-3
 
-* TODO: Change the title of this README 
-  in the text `# STARTER-team01` above
-  to match the name of your repo, i. e., `f23-5pm-2-team01`, then delete
-  this TODO item.
-
-* TODO: Correct the links to repo below, 
-  then delete this TODO.  Replace it with 
-  a link to your repo, e.g. 
-  https://github.com/ucsb-cs156-f23/f23-5pm-2-team01
-
-Repo: https://ucsb-cs156-f23/STARTER-team01
-
-* TODO: Correct the links to app on Dokku below, 
-  then delete this TODO.  Replace it with 
-  a link to your running app on Dokku, e.g.
-  https://team01.dokku-00.cs.ucsb.edu
-
-On Heroku: https://team01.dokku-00.cs.ucsb.edu
+On Heroku: https://team01.dokku-07.cs.ucsb.edu
 
 ## About this repo
 
@@ -42,7 +25,7 @@ The app provides some sample code for an API, and a Swagger user interface
 to test that API.  The API is essentially a proxy for another API.
 
 This code is the basis for a programming exercise where each student on a
-team of up to 5 students can build a proxy similar to the one in the example code.
+team of 6 students can build a proxy similar to the one in the example code.
 
 ## What can you do with this code?
 
