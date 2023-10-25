@@ -13,7 +13,7 @@ Lab instructions: <https://ucsb-cs156.github.io/f23/lab/team01.html>
 |Leo Guo         |HououinKyouma-2036  | `JokesQueryService`         | `JokesController`         |
 ```
 
-Repo: https://github.com/ucsb-cs156-f23/team01-f23-6pm-3.git
+Repo: https://github.com/ucsb-cs156-f23/team01-f23-6pm-3
 
 On Heroku: https://team01.dokku-07.cs.ucsb.edu
 
