@@ -18,13 +18,14 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+// RANDOM COMMENT TESTING JAVADOC GENERATION
 
 @Tag(name=&quot;University Query from Hipolabs&quot;)
-<span class="fc" id="L23">@Slf4j</span>
+<span class="fc" id="L24">@Slf4j</span>
 @RestController
 @RequestMapping(&quot;/api/university&quot;)
-<span class="fc" id="L26">public class UniversityController {</span>
-<span class="fc" id="L27">    ObjectMapper mapper = new ObjectMapper();</span>
+<span class="fc" id="L27">public class UniversityController {</span>
+<span class="fc" id="L28">    ObjectMapper mapper = new ObjectMapper();</span>
 
     @Autowired
     UniversityQueryService universityQueryService;
@@ -33,9 +34,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     public ResponseEntity&lt;String&gt; getUniversity(
         @Parameter(name=&quot;name&quot;, description=&quot;A University Name&quot;, example=&quot;Stanford&quot;) @RequestParam String name
     ) throws JsonProcessingException {
-<span class="fc" id="L36">        log.info(&quot;getUniversity: name={}&quot;, name);</span>
-<span class="fc" id="L37">        String result = universityQueryService.getJSON(name);</span>
-<span class="fc" id="L38">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L37">        log.info(&quot;getUniversity: name={}&quot;, name);</span>
+<span class="fc" id="L38">        String result = universityQueryService.getJSON(name);</span>
+<span class="fc" id="L39">        return ResponseEntity.ok().body(result);</span>
     }
 
 
